@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ibm-ci-operators
+  name: ibm-cp4i-operators
   annotations:
     argocd.argoproj.io/sync-wave: "230"
   labels:
@@ -16,10 +16,10 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: services
   source:
-    path: operators/ibm-ci-operators
+    path: operators/ibm-cp4i-operators
     helm:
       values: |
-        ibm-ci-operators:
+        ibm-cp4i-operators:
           subscriptions:
             cloudpakforintegration:
               name: ibm-cp-integration

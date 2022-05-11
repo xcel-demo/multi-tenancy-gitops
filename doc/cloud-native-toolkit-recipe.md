@@ -4,7 +4,7 @@
 1. Edit the Infrastructure layer `${GITOPS_PROFILE}/1-infra/kustomization.yaml` and un-comment the following:
     ```yaml
     - argocd/consolenotification.yaml
-    - argocd/namespace-ci.yaml
+    - argocd/namespace-cp4i.yaml
     - argocd/namespace-dev.yaml
     - argocd/namespace-staging.yaml
     - argocd/namespace-prod.yaml

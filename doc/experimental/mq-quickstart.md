@@ -23,7 +23,7 @@
     oc whoami --show-console
     ```
 
-- Run the bootstrap script, specify the git org `GIT_ORG` and the output directory to clone all repos `OUTPUT_DIR`. You can use `DEBUG=true` for verbose output.  Note, the deployment of all selected resources will take 30 - 45 minutes.  
+- Run the bootstrap script, specp4ify the git org `GIT_ORG` and the output directory to clone all repos `OUTPUT_DIR`. You can use `DEBUG=true` for verbose output.  Note, the deployment of all selected resources will take 30 - 45 minutes.  
     ```bash
     curl -sfL https://raw.githubusercontent.com/cloud-native-toolkit-demos/multi-tenancy-gitops-mq/ocp47-2021-2/scripts/bootstrap.sh | DEBUG=true GIT_ORG=<YOUR_GIT_ORG> OUTPUT_DIR=mq-production bash
     ```
@@ -52,7 +52,7 @@
     oc get platformnavigator -n tools -o=jsonpath='{ .items[*].status.conditions[].status }'
     # Expected output = True
     ```
-- Configure the cluster with your GitHub Personal Access Token (PAT), update the `gitops-repo` Configmap which will be used by the pipeline to populate the forked gitops repository and add the `artifactory-access` Secret to the `ci` namespace.  Specify values for the `GIT_USER`, `GIT_TOKEN` and `GIT_ORG` environment variables.
+- Configure the cluster with your GitHub Personal Access Token (PAT), update the `gitops-repo` Configmap which will be used by the pipeline to populate the forked gitops repository and add the `artifactory-access` Secret to the `cp4i` namespace.  Specp4ify values for the `GIT_USER`, `GIT_TOKEN` and `GIT_ORG` environment variables.
     ```bash
     cd mq-production/gitops-3-apps/scripts
 
@@ -65,13 +65,13 @@
 
 - Run a pipeline to build and deploy a Queue Manager
     - Log in to the OpenShift Web Console.
-    - Select Pipelines > Pipelines view in the `ci` namespace. 
+    - Select Pipelines > Pipelines view in the `cp4i` namespace. 
     - Click the `mq-infra-dev` pipeline and select Actions > Start.
     - Provide the HTTPS URL for the `mq-infra` repository in your Git Organization.
 
 - Run a pipeline to build and deploy a Spring application
     - Log in to the OpenShift Web Console.
-    - Select Pipelines > Pipelines view in the `ci` namespace. 
+    - Select Pipelines > Pipelines view in the `cp4i` namespace. 
     - Click the `mq-spring-app-dev` pipeline and select Actions > Start.
     - Provide the HTTPS URL for the `mq-spring-app` repository in your Git Organization.
 

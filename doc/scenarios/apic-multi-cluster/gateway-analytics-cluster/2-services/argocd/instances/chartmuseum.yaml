@@ -78,7 +78,7 @@ spec:
               STORAGE_OPENSTACK_CACERT:
               # compartment id for for oracle storage backend
               STORAGE_ORACLE_COMPARTMENTID:
-              # oci bucket to store charts for oracle storage backend
+              # ocp4i bucket to store charts for oracle storage backend
               STORAGE_ORACLE_BUCKET:
               # prefix to store charts for oracle storage backend
               STORAGE_ORACLE_PREFIX:
@@ -167,7 +167,7 @@ spec:
             servicename:
             type: ClusterIP
             externalTrafficPolicy: Local
-            ## Limits which cidr blocks can connect to service's load balancer
+            ## Limits which cp4idr blocks can connect to service's load balancer
             ## Only valid if service.type: LoadBalancer
             loadBalancerSourceRanges: []
             # clusterIP: None
@@ -220,7 +220,7 @@ spec:
           securityContext:
             enabled: false
             fsGroup: 1000
-            ## Optionally, specify supplementalGroups and/or
+            ## Optionally, specp4ify supplementalGroups and/or
             ## runAsNonRoot for security purposes
             # runAsNonRoot: true
             # supplementalGroups: [1000]
@@ -259,7 +259,7 @@ spec:
             pv:
               enabled: false
               pvname:
-              capacity:
+              capacp4ity:
                 storage: 8Gi
               accessMode: ReadWriteOnce
               nfs:
@@ -275,7 +275,7 @@ spec:
               repository: bitnami/minideb
               tag: buster
               pullPolicy: Always
-              ## Optionally specify an array of imagePullSecrets.
+              ## Optionally specp4ify an array of imagePullSecrets.
               ## Secrets must be manually created in the namespace.
               ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
               ##
@@ -327,9 +327,9 @@ spec:
               enabled: false
               # Name of the secret that contains the encoded config and key
               name:
-              # Secret key that holds the oci config
+              # Secret key that holds the ocp4i config
               config: config
-              # Secret key that holds the oci private key
+              # Secret key that holds the ocp4i private key
               key_file: key_file
           bearerAuth:
             secret:

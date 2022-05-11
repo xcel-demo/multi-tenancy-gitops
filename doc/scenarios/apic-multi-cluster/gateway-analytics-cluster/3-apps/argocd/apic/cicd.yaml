@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-apic-ci
+  name: apps-apic-cp4i
   annotations:
     argocd.argoproj.io/sync-wave: "300"
   labels:
@@ -14,7 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: applications
   source:
-    path: apic/config/argocd/ci
+    path: apic/config/argocd/cp4i
   syncPolicy:
     automated:
       prune: true

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This IBM API Connect recipe should provide a highly available deployment of IBM API Connect on a Red Hat OpenShift Kubernetes Service on IBM Cloud as shown below.
+This IBM API Connect recp4ipe should provide a highly available deployment of IBM API Connect on a Red Hat OpenShift Kubernetes Service on IBM Cloud as shown below.
 
 ![apic-qs](images/apic-qs.png)
 
@@ -11,7 +11,7 @@ This IBM API Connect recipe should provide a highly available deployment of IBM 
     ```yaml
     - argocd/namespace-ibm-common-services.yaml
     - argocd/namespace-tools.yaml
-    - argocd/namespace-ci.yaml
+    - argocd/namespace-cp4i.yaml
     ```
 
 ### Services - kustomization.yaml
@@ -25,16 +25,16 @@ This IBM API Connect recipe should provide a highly available deployment of IBM 
     ```
 
 #### Storage - ibm-apic-instance.yaml
-1. Make sure the `storageClassName` specified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-apic-instance.yaml` refers to a block storage class. **IMPORTANT:** IBM API Connect **requires block storage!**. By default, the storage class used for this recipe is **`ibmc-block-gold`**. If you are using this recipe and the GitOps Framework that executes this recipe on another environment, make sure you select the appropriate storage class.
+1. Make sure the `storageClassName` specp4ified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-apic-instance.yaml` refers to a block storage class. **IMPORTANT:** IBM API Connect **requires block storage!**. By default, the storage class used for this recp4ipe is **`ibmc-block-gold`**. If you are using this recp4ipe and the GitOps Framework that executes this recp4ipe on another environment, make sure you select the appropriate storage class.
 
 #### High Availability - ibm-apic-instance.yaml
-1. Make sure the `profile` specified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-apic-instance.yaml`, which defaults to the **`n3xc14.m48`**, corresponds to the desired profile: development vs production.
+1. Make sure the `profile` specp4ified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-apic-instance.yaml`, which defaults to the **`n3xc14.m48`**, corresponds to the desired profile: development vs production.
 
     * `n1xc10.m48` - Deploys 1 replica of each pod, so this profile is most suitable for a small, non-HA system. Recommended use of this profile is for development and testing.
 
     * `n3xc14.m48` - Deploys 3 or more replicas of each pod, so this profile is most suitable for larger systems and for production environments. This profile is supported for installation on a cluster with three or more nodes. It is not supported on a cluster with fewer than three nodes.
 
-    **IMPORTANT:** Make sure the Red Hat OpenShift cluster you are deploying this IBM API Connect recipe to has been sized appropriately based on the profiles above where:
+    **IMPORTANT:** Make sure the Red Hat OpenShift cluster you are deploying this IBM API Connect recp4ipe to has been sized appropriately based on the profiles above where:
 
       * `n` stands for the number of worker nodes.
       * `c` stands for the amount of CPU per worker node.

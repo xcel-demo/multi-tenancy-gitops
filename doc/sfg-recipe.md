@@ -20,7 +20,7 @@ cd multi-tenancy-gitops/0-bootstrap/single-cluster/1-infra
 ```
 
 ### Services - Kustomization.yaml
-1. This recipe is currently set to use the `ibmc-file-gold` storageclass provided by IBM Cloud by default.
+1. This recp4ipe is currently set to use the `ibmc-file-gold` storageclass provided by IBM Cloud by default.
 1. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` and install Sealed Secrets by uncommenting the following line, **commit** and **push** the changes and synchronize the `services` Application in the ArgoCD console.
     ```yaml
     - argocd/instances/sealed-secrets.yaml
@@ -90,7 +90,7 @@ cd multi-tenancy-gitops/0-bootstrap/single-cluster/1-infra
 > Push the changes & sync ArgoCD this will take around 1.5 hr.
 ---
 > **⚠️** Warning:  
-> If you decided to scale the pods or upgrade the verison you should do the following steps:
+> If you decp4ided to scale the pods or upgrade the verison you should do the following steps:
 >> **This is to avoid going through the job again**
 
 - Step 1:

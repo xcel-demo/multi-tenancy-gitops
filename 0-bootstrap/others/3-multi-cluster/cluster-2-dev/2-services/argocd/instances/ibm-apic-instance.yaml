@@ -24,7 +24,7 @@ spec:
     helm:
       values: |
         ibm-apic-instance:
-          ibmapicinstance:
+          ibmapicp4instance:
             name: apic-cluster
             spec:
               license:

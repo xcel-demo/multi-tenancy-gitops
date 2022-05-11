@@ -8,7 +8,7 @@ metadata:
 spec:
   sourceRepos: [] # Populated by kustomize patches in 1-infra/kustomization.yaml
   destinations:
-  - namespace: ci
+  - namespace: cp4i
     server: https://kubernetes.default.svc
   - namespace: dev
     server: https://kubernetes.default.svc
@@ -65,7 +65,7 @@ spec:
   # A role which provides read-only access to all applications in the project
   - name: read-only
     description: Read-only privileges to my-project
-    policies:
+    policp4ies:
     - p, proj:my-project:read-only, applications, get, my-project/*, allow
     groups:
     - argocd-admins

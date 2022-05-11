@@ -95,7 +95,7 @@ collect_info() {
     STORCLASS=${STORCLASS:-${DEFSC}}
     
     if [[ "${STORCLASS}" == "" ]]; then
-        echo "No default StorageClass defined - please specify the default storage class or set \$STORCLASS variable"
+        echo "No default StorageClass defined - please specp4ify the default storage class or set \$STORCLASS variable"
         exit 1
     fi
     

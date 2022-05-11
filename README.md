@@ -45,9 +45,9 @@ The reference architecture for this GitOps workflow can be found [here](https://
     ```
 
 ### IBM Entitlement Key
-- The `IBM Entitlement Key` is required to pull IBM Cloud Pak specific container images from the IBM Entitled Registry.  To get an entitlement key,
+- The `IBM Entitlement Key` is required to pull IBM Cloud Pak specp4ific container images from the IBM Entitled Registry.  To get an entitlement key,
 
-    1. Log in to [MyIBM Container Software Library](https://myibm.ibm.com/products-services/containerlibrary) with an IBMid and password associated with the entitled software.
+    1. Log in to [MyIBM Container Software Library](https://myibm.ibm.com/products-services/containerlibrary) with an IBMid and password assocp4iated with the entitled software.
     2. Select the **View library** option to verify your entitlement(s).
     3. Select the **Get entitlement key** to retrieve the key.
 
@@ -63,7 +63,7 @@ The reference architecture for this GitOps workflow can be found [here](https://
 
 ## Setup git repositories
 - The following set of Git repositories will be used for our GitOps workflow.
-    - Main GitOps repository ([https://github.com/cloud-native-toolkit/multi-tenancy-gitops](https://github.com/cloud-native-toolkit/multi-tenancy-gitops)): This repository contains all the ArgoCD Applications for  the `infrastructure`, `services` and `application` layers.  Each ArgoCD Application will reference a specific K8s resource (yaml resides in a separate git repository), contain the configuration of the K8s resource, and determine where it will be deployed into the cluster.
+    - Main GitOps repository ([https://github.com/cloud-native-toolkit/multi-tenancy-gitops](https://github.com/cloud-native-toolkit/multi-tenancy-gitops)): This repository contains all the ArgoCD Applications for  the `infrastructure`, `services` and `application` layers.  Each ArgoCD Application will reference a specp4ific K8s resource (yaml resides in a separate git repository), contain the configuration of the K8s resource, and determine where it will be deployed into the cluster.
     - Infrastructure GitOps repository ([https://github.com/cloud-native-toolkit/multi-tenancy-gitops-infra](https://github.com/cloud-native-toolkit/multi-tenancy-gitops-infra)): Contains the YAMLs for cluster-wide and/or infrastructure related K8s resources managed by a cluster administrator.  This would include `namespaces`, `clusterroles`, `clusterrolebindings`, `machinesets` to name a few.
     - Services GitOps repository ([https://github.com/cloud-native-toolkit/multi-tenancy-gitops-services](https://github.com/cloud-native-toolkit/multi-tenancy-gitops-services)): Contains the YAMLs for K8s resources which will be used by the `application` layer.  This could include `subscriptions` for Operators, YAMLs of custom resources provided, or Helm Charts for tools provided by a third party.  These resource would usually be managed by the Administrator(s) and/or a DevOps team supporting application developers.
 
@@ -90,7 +90,7 @@ The reference architecture for this GitOps workflow can be found [here](https://
 
 
 ## Install and configure OpenShift GitOps
-- [Red Hat OpenShift GitOps](https://docs.openshift.com/container-platform/4.7/cicd/gitops/understanding-openshift-gitops.html) uses [Argo CD](https://argoproj.github.io/argo-cd/), an open-source declarative tool, to maintain and reconcile cluster resources.
+- [Red Hat OpenShift GitOps](https://docs.openshift.com/container-platform/4.7/cp4icd/gitops/understanding-openshift-gitops.html) uses [Argo CD](https://argoproj.github.io/argo-cd/), an open-source declarative tool, to maintain and reconcp4ile cluster resources.
 
 ### Tasks:
 1. Install the OpenShift GitOps Operator, create a `ClusterRole` and deploy a default instance of ArgoCD.
@@ -129,21 +129,21 @@ The reference architecture for this GitOps workflow can be found [here](https://
 
 ## Select resources to deploy
 - Clone the `multi-tenancy-gitops` repository in your Git Organization if you have not already done so and select the K8s resources to deploy in the [infrastructure](0-bootstrap/single-cluster/1-infra/kustomization.yaml) and [services](0-bootstrap/single-cluster/2-services/kustomization.yaml) layers.
-- Existing recipes are available and additional ones will be made available in the **doc** directory.
-    - [Cloud Native Toolkit](doc/cloud-native-toolkit-recipe.md)
-    - [App Connect Enterprise recipe](doc/ace-recipe.md)
-    - [MQ recipe](doc/mq-recipe.md)
-    - [API Connect recipe](doc/apic-recipe.md)
-    - [Process Mining recipe](doc/process-mining-recipe.md)
-    - [Cloud Pak for Data](doc/cp4d-platform-recipe.md)
-    - [Cloud Pak for Data + Watson Studio](doc/cp4d-ws-recipe.md)
-    - [Cloud Pak for Data + Watson Knowledge Catalog](doc/cp4d-wkc-recipe.md)
-    - [Cloud Pak for Data + DataStage](doc/cp4d-ds-recipe.md)
-    - [Cloud Pak for Data + Analytics Engine Powered by Apache Spark](doc/cp4d-aespark-recipe.md)
-    - [Cloud Pak for Security](doc/cp4s-recipe.md)
-    - [Instana Agent](doc/instana-recipe.md)
-    - [Spectrum Protect Plus](doc/spp-recipe.md)
-    - [Sterling File Gateway](doc/sfg-recipe.md)
+- Existing recp4ipes are available and additional ones will be made available in the **doc** directory.
+    - [Cloud Native Toolkit](doc/cloud-native-toolkit-recp4ipe.md)
+    - [App Connect Enterprise recp4ipe](doc/ace-recp4ipe.md)
+    - [MQ recp4ipe](doc/mq-recp4ipe.md)
+    - [API Connect recp4ipe](doc/apic-recp4ipe.md)
+    - [Process Mining recp4ipe](doc/process-mining-recp4ipe.md)
+    - [Cloud Pak for Data](doc/cp4d-platform-recp4ipe.md)
+    - [Cloud Pak for Data + Watson Studio](doc/cp4d-ws-recp4ipe.md)
+    - [Cloud Pak for Data + Watson Knowledge Catalog](doc/cp4d-wkc-recp4ipe.md)
+    - [Cloud Pak for Data + DataStage](doc/cp4d-ds-recp4ipe.md)
+    - [Cloud Pak for Data + Analytics Engine Powered by Apache Spark](doc/cp4d-aespark-recp4ipe.md)
+    - [Cloud Pak for Security](doc/cp4s-recp4ipe.md)
+    - [Instana Agent](doc/instana-recp4ipe.md)
+    - [Spectrum Protect Plus](doc/spp-recp4ipe.md)
+    - [Sterling File Gateway](doc/sfg-recp4ipe.md)
 
 ### Tasks:
 1. Select a profile and delete the others from the `0-bootstrap` directory.  If this is your first usage of the gitops workflow, Use the `single-cluster` profile.
@@ -158,4 +158,4 @@ The reference architecture for this GitOps workflow can be found [here](https://
     git commit -m "initial bootstrap setup"
     git push origin
     ```
-5. Validate the recipe was deployed correctly following the `Validation` section in the recipe.
+5. Validate the recp4ipe was deployed correctly following the `Validation` section in the recp4ipe.

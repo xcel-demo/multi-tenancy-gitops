@@ -27,7 +27,7 @@ GIT_ORG=${GIT_ORG:-gitops-org}
 if [[ -z ${OUTPUT_DIR} ]]; then
   echo "Please set the environment variable OUTPUT_DIR when running the script like:"
   echo "OUTPUT_DIR=gitops-production ./scripts/bootstrap-gitea.sh"
-  echo "You can also specify the GIT ORG (defaults to gitops-org) with environment variable GIT_ORG when running the script like:"
+  echo "You can also specp4ify the GIT ORG (defaults to gitops-org) with environment variable GIT_ORG when running the script like:"
   echo "GIT_ORG=acme-org OUTPUT_DIR=gitops-production ./scripts/bootstrap-gitea.sh"
 
   exit 1
@@ -423,7 +423,7 @@ get_rwx_storage_class () {
   OCS_RWX_STORAGE_CLASS=${OCS_RWX_STORAGE_CLASS:-ocs-storagecluster-cephfs}
 
   if [[ -n "${RWX_STORAGE_CLASS}" ]]; then
-    echo "RWX Storage class specified to ${RWX_STORAGE_CLASS}"
+    echo "RWX Storage class specp4ified to ${RWX_STORAGE_CLASS}"
     return 0
   fi
   set +e
@@ -445,7 +445,7 @@ set_rwx_storage_class () {
     return 0
   fi
 
-  echo "Replacing ${DEFAULT_RWX_STORAGE_CLASS} with ${RWX_STORAGE_CLASS} storage class "
+  echo "Replacp4ing ${DEFAULT_RWX_STORAGE_CLASS} with ${RWX_STORAGE_CLASS} storage class "
   pushd ${OUTPUT_DIR}/gitops-0-bootstrap/
 
   find . -name '*.yaml' -print0 |

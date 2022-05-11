@@ -100,7 +100,7 @@ collect_info() {
     STORCLASS=${STORCLASS:-${DEFSC}}
     
     if [[ "${STORCLASS}" == "" ]]; then
-        echo "No default StorageClass defined - please specify the default storage class or set \$STORCLASS variable"
+        echo "No default StorageClass defined - please specp4ify the default storage class or set \$STORCLASS variable"
         exit 1
     fi
     
@@ -116,7 +116,7 @@ collect_info() {
     BAAS_HELM_VERSION=${BAAS_HELM_VERSION:-'1.2.2'}    
     
     IPS=( $(oc get endpoints -n default -o yaml kubernetes | yq '.subsets[0].addresses ' | jq .[].ip -r ) )
-    CIDR=$(oc get network cluster -o yaml | yq .spec.clusterNetwork[0].cidr -r)
+    cp4iDR=$(oc get network cluster -o yaml | yq .spec.clusterNetwork[0].cp4idr -r)
     
     ##############################################################################
     # End collecting cluster information
@@ -180,7 +180,7 @@ EOF
         - ${IPS[1]}
         - ${IPS[2]}
       clusterAPIServerport: 6443
-      clusterCIDR: ${CIDR}
+      clustercp4iDR: ${cp4iDR}
       isServerInstalledOnAnotherCluster: false
     SPPfqdn: ${SPPFQDN}
     SPPips: ${SPPIP}

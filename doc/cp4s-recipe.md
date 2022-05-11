@@ -12,7 +12,7 @@
     - argocd/namespace-knative-serving-ingress.yaml
     ```
 ### Services - Kustomization.yaml
-1. Edit the **CP4SThreatManagement**s custom resource instance and specify a block or file storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cp4sthreatmanagements-instance.yaml`.  The default is set to `managed-nfs-storage`.
+1. Edit the **CP4SThreatManagement**s custom resource instance and specp4ify a block or file storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cp4sthreatmanagements-instance.yaml`.  The default is set to `managed-nfs-storage`.
     ```yaml
       - name: spec.basicDeploymentConfiguration.storageClass
         value: managed-nfs-storage
@@ -68,4 +68,4 @@
     ```bash
     oc get route isc-route-default --no-headers -n <CP4S_NAMESPACE> | awk '{print $2}'
     ```
-    1. Log in with the user ID and password specified (ie. `adminUser` / `cloudpak`).
+    1. Log in with the user ID and password specp4ified (ie. `adminUser` / `cloudpak`).

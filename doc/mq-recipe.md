@@ -5,7 +5,7 @@
     ```yaml
     - argocd/consolenotification.yaml
     - argocd/namespace-ibm-common-services.yaml
-    - argocd/namespace-ci.yaml
+    - argocd/namespace-cp4i.yaml
     - argocd/namespace-dev.yaml
     - argocd/namespace-staging.yaml
     - argocd/namespace-prod.yaml
@@ -13,7 +13,7 @@
     - argocd/namespace-tools.yaml
     ```
 ### Services - Kustomization.yaml
-1. Edit the Platform Navigator instance and specify a storage class that supports ReadWriteMany (RWX) `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-platform-navigator-instance.yaml`.  The default is set to `managed-nfs-storage`.
+1. Edit the Platform Navigator instance and specp4ify a storage class that supports ReadWriteMany (RWX) `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-platform-navigator-instance.yaml`.  The default is set to `managed-nfs-storage`.
     ```yaml
     storage:
         class: managed-nfs-storage

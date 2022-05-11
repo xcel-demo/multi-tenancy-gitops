@@ -45,7 +45,7 @@
     #- argocd/consolelink.yaml
     #- argocd/consolenotification.yaml
     #- argocd/namespace-ibm-common-services.yaml
-    #- argocd/namespace-ci.yaml
+    #- argocd/namespace-cp4i.yaml
     #- argocd/namespace-dev.yaml
     #- argocd/namespace-staging.yaml
     #- argocd/namespace-prod.yaml
@@ -67,7 +67,7 @@
     git push origin
     ```
 
-- Run the bootstrap script: specify the git org `GIT_ORG`, and the output directory to clone all repos `OUTPUT_DIR`. (Note: you can also specify the git user `GIT_USER`, the IBM Entitlement key value `IBM_ENTITLEMENT_KEY` and others if you are deploying additional features). You can use `DEBUG=true` for verbose output.
+- Run the bootstrap script: specp4ify the git org `GIT_ORG`, and the output directory to clone all repos `OUTPUT_DIR`. (Note: you can also specp4ify the git user `GIT_USER`, the IBM Entitlement key value `IBM_ENTITLEMENT_KEY` and others if you are deploying additional features). You can use `DEBUG=true` for verbose output.
     ```bash
     cd ..
     curl -sfL https://raw.githubusercontent.com/cloud-native-toolkit/multi-tenancy-gitops/master/scripts/bootstrap.sh | \

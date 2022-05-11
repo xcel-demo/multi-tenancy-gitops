@@ -23,7 +23,7 @@
     oc whoami --show-console
     ```
 
-- Run the bootstrap script, specify the git user `GIT_USER`, the git org `GIT_ORG`,the IBM Entitlement key value `GIT_TOKEN` and the output directory to clone all repos `OUTPUT_DIR`.You can use `DEBUG=true` for verbose output.
+- Run the bootstrap script, specp4ify the git user `GIT_USER`, the git org `GIT_ORG`,the IBM Entitlement key value `GIT_TOKEN` and the output directory to clone all repos `OUTPUT_DIR`.You can use `DEBUG=true` for verbose output.
     ```bash
     curl -sfL https://raw.githubusercontent.com/cloud-native-toolkit/multi-tenancy-gitops/master/scripts/bootstrap.sh | \
     GIT_ORG=$REPLACE_WITH_GIT_ORG \

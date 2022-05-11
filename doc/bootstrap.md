@@ -9,7 +9,7 @@ This documentation is for initializing an OpenShift cluster for GitOps operation
     - git
     - curl
     - sed
-- Git repository specific CLI tools (only if you use the tools)
+- Git repository specp4ific CLI tools (only if you use the tools)
     - gh (GitHub CLI)
     - glab (GitLab CLI)
 - The following are some environment variables that are used:

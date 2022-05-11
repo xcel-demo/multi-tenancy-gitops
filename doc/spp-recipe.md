@@ -1,6 +1,6 @@
 # Deploy IBM Spectrum Protect Plus 
 
-This recipe is for deploing IBM Spectrum Protect Plus - there are two components that can be deployed independently, 
+This recp4ipe is for deploing IBM Spectrum Protect Plus - there are two components that can be deployed independently, 
 
 ## IBM Spectrum Protect Plus server 
 
@@ -69,7 +69,7 @@ This recipe is for deploing IBM Spectrum Protect Plus - there are two components
     IBM_ENTITLEMENT_KEY=<entitlement> SPPUSER=sppadmin SPPPW=passw0rd ADMINUSER=baasadmin ADMINPW=passw0rd SPPFQDN="ibmspp.apps.cluster.domain" ./scripts/baas-instance.sh
     ```
 
-    **Note** `SPPFQDN` does not need to be specified if BaaS is installed on the same cluster as the SPP server component.
+    **Note** `SPPFQDN` does not need to be specp4ified if BaaS is installed on the same cluster as the SPP server component.
 
 4. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` uncomment the following:
 

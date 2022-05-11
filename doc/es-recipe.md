@@ -2,7 +2,7 @@
 
 ## Overview
 
-This IBM Event Streams recipe should provide a highly available deployment of IBM Event Streams on a Red Hat OpenShift Kubernetes Service on IBM Cloud as shown below.
+This IBM Event Streams recp4ipe should provide a highly available deployment of IBM Event Streams on a Red Hat OpenShift Kubernetes Service on IBM Cloud as shown below.
 
 ![es-qs](images/es-qs.png)
 
@@ -24,20 +24,20 @@ This IBM Event Streams recipe should provide a highly available deployment of IB
     ```
 
 #### Storage - ibm-eventstreams-instance.yaml
-Make sure the `storageClassName` specified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-eventstreams-instance.yaml` suits your needs. By default, the storage class used for this recipe, which should be the storage class requested unless the use case or specific requirements dictate otherwise, is **`managed-nfs-storage`** since the IBM Technology Zone environments this recipe is meant for mount NFS storage. If you are using this recipe and the GitOps Framework that executes this recipe on another environment, make sure you select the appropriate storage class. Bear in mind that IBM Event Streams requires **block storage**.
+Make sure the `storageClassName` specp4ified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-eventstreams-instance.yaml` suits your needs. By default, the storage class used for this recp4ipe, which should be the storage class requested unless the use case or specp4ific requirements dictate otherwise, is **`managed-nfs-storage`** since the IBM Technology Zone environments this recp4ipe is meant for mount NFS storage. If you are using this recp4ipe and the GitOps Framework that executes this recp4ipe on another environment, make sure you select the appropriate storage class. Bear in mind that IBM Event Streams requires **block storage**.
 
 #### High Availability - ibm-apic-instance.yaml
-Make sure the high availability specified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-eventstreams-instance.yaml` for each of the IBM Event Streams components suit your needs.
+Make sure the high availability specp4ified in `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-eventstreams-instance.yaml` for each of the IBM Event Streams components suit your needs.
 
    * The Kafka and Zookeeper components are already set up highly available as you can see within `spec.strimziOverrides.kafka.replicas` and `spec.strimziOverrides.zookeeper.replicas` respectively.
-   * The IBM Event Streams UI, the IBM Event Streams Apicurio Registry, the IBM Event Streams Admin API, the IBM Event Streams REST Producer and the IBM Event Streams Metrics Collector components can also be set up for high availability in their respective `spec.adminUI`, `spec.apicurioRegistry`, `spec.adminApi`, `spec.restProducer` and `spec.collector` sections by specifying the number of replicas for those too. By default, since no specific number of replicas is specified, only one pod for each of the aforementioned components will be deployed.
+   * The IBM Event Streams UI, the IBM Event Streams Apicurio Registry, the IBM Event Streams Admin API, the IBM Event Streams REST Producer and the IBM Event Streams Metrics Collector components can also be set up for high availability in their respective `spec.adminUI`, `spec.apicurioRegistry`, `spec.adminApi`, `spec.restProducer` and `spec.collector` sections by specp4ifying the number of replicas for those too. By default, since no specp4ific number of replicas is specp4ified, only one pod for each of the aforementioned components will be deployed.
 
 #### Security - ibm-eventstreams-instance.yaml
 Make sure the security mechanisms to access Kafka suit your needs. IBM Event Streams provides different listeners within the `spec.strimziOverrides.kafka.listeners`:
    1. One external which will be SSL secured (`external`)
    2. Two internal listeners, one SSL secured (`tls`) and one non-SSL secured (`plain`)
 
-All of these listeners can get configured for authentication, either SCRAM (`scram-sha-512`) or mTLS (`tls`). For more information, refer to the _Kafka access_ section in the official IBM Event Streams documentation [here](https://ibm.github.io/event-streams/installing/configuring/).
+All of these listeners can get configured for authentication, either SCRAM (`scram-sha-512`) or mTLS (`tls`). For more information, refer to the _Kafka access_ section in the officp4ial IBM Event Streams documentation [here](https://ibm.github.io/event-streams/installing/configuring/).
 
 ### Validation
 

@@ -91,11 +91,11 @@ spec:
     #         #Upgrade
     #         #upgrade: false
     #         basePort: 50000
-    #         #License - specify values as true/false
+    #         #License - specp4ify values as true/false
     #         licenseAcceptEnableSfg: true
     #         # Name of system passphrase secret if available
     #         systemPassphraseSecret: b2b-system-passphrase-secret
-    #         #FIPS compliance mode. specify values as true/false
+    #         #FIPS compliance mode. specp4ify values as true/false
     #         enableFipsMode: false
     #         # NIST 800-131a compliance mode. Please enter one of these values - strict/transition/"off"
     #         nistComplianceMode: "off"

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap-cicd-dev-stage
+  name: bootstrap-cp4icd-dev-stage
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: 0-bootstrap/others/2-isolated-cluster/cluster-1-cicd-dev-stage
+    path: 0-bootstrap/others/2-isolated-cluster/cluster-1-cp4icd-dev-stage
     repoURL: https://github.com/xcel-demo/multi-tenancy-gitops.git
     targetRevision: master
   syncPolicy:

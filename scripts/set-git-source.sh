@@ -47,5 +47,5 @@ find ${SCRIPTDIR}/../0-bootstrap -name '*.yaml' -print0 |
       rm "${File}.bak"
     fi
   done
-echo "done replacing variables in kustomization.yaml files"
+echo "done replacp4ing variables in kustomization.yaml files"
 echo "git commit and push changes now"

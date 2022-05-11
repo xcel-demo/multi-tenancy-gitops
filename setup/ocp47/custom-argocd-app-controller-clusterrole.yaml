@@ -77,7 +77,7 @@ rules:
     apiGroups:
       - 'networking.k8s.io'
     resources:
-      - networkpolicies
+      - networkpolicp4ies
   - verbs:
       - '*'
     apiGroups:
@@ -262,12 +262,12 @@ rules:
     resources:
       - icp4aclusters
   - apiGroups:              # API Connect
-      - apiconnect.ibm.com  # API Connect specific API groups
+      - apiconnect.ibm.com  # API Connect specp4ific API groups
       - management.apiconnect.ibm.com
       - portal.apiconnect.ibm.com
       - gateway.apiconnect.ibm.com
       - analytics.apiconnect.ibm.com
-      - datapower.ibm.com   # DataPower specific API groups
+      - datapower.ibm.com   # DataPower specp4ific API groups
     resources:
       - '*'
     verbs:

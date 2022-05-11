@@ -39,9 +39,9 @@ spec:
             # software from Instana.
             # downloadKey: null
 
-            # Rather than specifying the agent key and optionally the download key, you can "bring your
+            # Rather than specp4ifying the agent key and optionally the download key, you can "bring your
             # own secret" creating it in the namespace in which you install the `instana-agent` and
-            # specify its name in the `keysSecret` field. The secret you create must contains
+            # specp4ify its name in the `keysSecret` field. The secret you create must contains
             # a field called `key` and optionally one called `downloadKey`, which contain, respectively,
             # the values you'd otherwise set in `.agent.key` and `agent.downloadKey`.
             keysSecret: instana-agent-key
@@ -64,17 +64,17 @@ spec:
             image:
               # agent.image.name is the name of the container image of the Instana agent.
               name: instana/agent
-              # agent.image.digest is the digest (a.k.a. Image ID) of the agent container image; if specified, it has priority over agent.image.tag, which will be ignored.
+              # agent.image.digest is the digest (a.k.a. Image ID) of the agent container image; if specp4ified, it has priority over agent.image.tag, which will be ignored.
               #digest:
-              # agent.image.tag is the tag name of the agent container image; if agent.image.digest is specified, this property is ignored.
+              # agent.image.tag is the tag name of the agent container image; if agent.image.digest is specp4ified, this property is ignored.
               tag: latest
-              # agent.image.pullPolicy specifies when to pull the image container.
+              # agent.image.pullPolicy specp4ifies when to pull the image container.
               pullPolicy: Always
               # agent.image.pullSecrets allows you to override the default pull secret that is created when agent.image.name starts with "containers.instana.io"
               # Setting agent.image.pullSecrets prevents the creation of the default "containers-instana-io" secret.
               # pullSecrets:
               #   - name: my_awesome_secret_instead
-              # If you want no imagePullSecrets to be specified in the agent pod, you can just pass an empty array to agent.image.pullSecrets
+              # If you want no imagePullSecrets to be specp4ified in the agent pod, you can just pass an empty array to agent.image.pullSecrets
               # pullSecrets: []
 
             updateStrategy:
@@ -146,8 +146,8 @@ spec:
               com.instana.plugin.ace:
                 enabled: true
                 poll_rate: 20
-                NodesOrServers: # Multiple Integration node instances or multiple standalone Integration Servers can be specified
-                  create-customer-details-rest:  # specify the Integration node name (required)
+                NodesOrServers: # Multiple Integration node instances or multiple standalone Integration Servers can be specp4ified
+                  create-customer-details-rest:  # specp4ify the Integration node name (required)
                         # Following parameters used to acess ACE server's rest api service to retrieve such as status data, configuration data etc
                     restApiPort: '7600'           # ACE server's rest api port (required)
 
@@ -169,22 +169,22 @@ spec:
             image:
               # leaderElector.image.name is the name of the container image of the leader elector.
               name: instana/leader-elector
-              # leaderElector.image.digest is the digest (a.k.a. Image ID) of the leader elector container image; if specified, it has priority over leaderElector.image.digest, which will be ignored.
+              # leaderElector.image.digest is the digest (a.k.a. Image ID) of the leader elector container image; if specp4ified, it has priority over leaderElector.image.digest, which will be ignored.
               #digest:
-              # leaderElector.image.tag is the tag name of the agent container image; if leaderElector.image.digest is specified, this property is ignored.
+              # leaderElector.image.tag is the tag name of the agent container image; if leaderElector.image.digest is specp4ified, this property is ignored.
               tag: 0.5.4
             port: 42655
 
-          # openshift specifies whether the cluster role should include openshift permissions and other tweaks to the YAML.
-          # The chart will try to auto-detect if the cluster is OpenShift, so you will likely not even need to set this explicitly.
+          # openshift specp4ifies whether the cluster role should include openshift permissions and other tweaks to the YAML.
+          # The chart will try to auto-detect if the cluster is OpenShift, so you will likely not even need to set this explicp4itly.
           openshift: true
 
           rbac:
-            # Specifies whether RBAC resources should be created
+            # Specp4ifies whether RBAC resources should be created
             create: false
 
           service:
-            # Specifies whether to create the instana-agent service to expose within the cluster the Prometheus remote-write, OpenTelemetry GRCP endpoint and other APIs
+            # Specp4ifies whether to create the instana-agent service to expose within the cluster the Prometheus remote-write, OpenTelemetry GRCP endpoint and other APIs
             # Note: Requires Kubernetes 1.17+, as it uses topologyKeys
             create: false
 
@@ -196,14 +196,14 @@ spec:
               enabled: false # If true, it will also apply `service.create=true`
 
           serviceAccount:
-            # Specifies whether a ServiceAccount should be created
+            # Specp4ifies whether a ServiceAccount should be created
             create: true
             # The name of the ServiceAccount to use.
             # If not set and `create` is true, a name is generated using the fullname template
             # name: instana-agent
 
           podSecurityPolicy:
-            # Specifies whether a PodSecurityPolicy should be authorized for the Instana Agent pods.
+            # Specp4ifies whether a PodSecurityPolicy should be authorized for the Instana Agent pods.
             # Requires `rbac.create` to be `true` as well.
             enable: false
             # The name of an existing PodSecurityPolicy you would like to authorize for the Instana Agent pods.
@@ -217,7 +217,7 @@ spec:
           kubernetes:
             # Configures use of a Deployment for the Kubernetes sensor rather than as a potential member of the DaemonSet
             deployment:
-              # Specifies whether or not to enable the Deployment and turn off the Kubernetes sensor in the DaemonSet
+              # Specp4ifies whether or not to enable the Deployment and turn off the Kubernetes sensor in the DaemonSet
               enabled: false
               # Use a single replica, the impact will generally be low and we need to address a host of other concerns where clusters are large.
               replicas: 1

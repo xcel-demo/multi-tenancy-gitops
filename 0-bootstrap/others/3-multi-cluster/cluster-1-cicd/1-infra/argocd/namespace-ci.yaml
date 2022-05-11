@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespace-ci
+  name: namespace-cp4i
   labels:
     gitops.tier.layer: infra
   annotations:
     argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
-    namespace: ci
+    namespace: cp4i
     server: https://kubernetes.default.svc
   project: infra
   source:
-    path: namespaces/ci
+    path: namespaces/cp4i
   syncPolicy:
     automated:
       prune: true
